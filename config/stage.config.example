@@ -1,0 +1,11 @@
+env=stage
+
+[database]
+host=localhost
+database=timeAppStage
+user=root
+password=root
+port=3306
+
+[log]
+level=ERROR

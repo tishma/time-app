@@ -1,0 +1,11 @@
+env=prod
+
+[database]
+host=localhost
+database=timeApp
+user=root
+password=root
+port=3306
+
+[log]
+level=ERROR
