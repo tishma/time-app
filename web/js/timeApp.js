@@ -35,7 +35,7 @@ var timeApp = (function () {
         },
         showAjaxError: function (error) {
             alert(error.message);
-            if (error.status > 400 && error.status < 500) {
+            if (error.status == 401) {
                 document.location.hash = "#/login";
             }
         },
