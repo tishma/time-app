@@ -26,7 +26,7 @@ var timeApp = (function () {
             timeApp.ui.showLoggedInUser(loggedUser);
         },
         showTimezones: function () {
-            if(!loggedUser) {
+            if (!loggedUser) {
                 alert("Not logged in");
                 timeApp.navigate("login")
                 return;
@@ -56,28 +56,28 @@ var timeApp = (function () {
         setLoggedUser: function (user) {
             loggedUser = user;
         },
-        persistUser: function(user) {
+        persistUser: function (user) {
             localStorage.setItem("user", JSON.stringify(user));
         },
-        loadUser: function() {
+        loadUser: function () {
             var userString = localStorage.getItem("user");
-            if(userString && (userString != 'undefined')) {
+            if (userString && (userString != 'undefined')) {
                 return JSON.parse(userString);
             }
             else {
                 return false;
             }
         },
-        forgetUser: function() {
+        forgetUser: function () {
             localStorage.removeItem("user");
         },
-        createTimezone: function(timezone) {
+        createTimezone: function (timezone) {
             timeApp.service.createTimezone(loggedUser, timezone, timeApp.showTimezones, timeApp.showAjaxError);
         },
-        updateTimezone: function(timezone) {
+        updateTimezone: function (timezone) {
             timeApp.service.updateTimezone(loggedUser, timezone, timeApp.showTimezones, timeApp.showAjaxError);
         },
-        deleteTimezone: function(timezoneId) {
+        deleteTimezone: function (timezoneId) {
             timeApp.service.deleteTimezone(loggedUser, timezoneId, timeApp.showTimezones, timeApp.showAjaxError);
         }
     };

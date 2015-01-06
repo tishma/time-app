@@ -25,7 +25,16 @@ timeApp.ui = (function () {
                 var username = $("input[name=username]", this).val();
                 var password = $("input[name=password]", this).val();
                 var passwordRepeat = $("input[name=passwordRepeat]", this).val();
-                if (password != passwordRepeat) {
+                if (!username.match(/^[A-Za-z][A-Za-z0-9]*$/g)) {
+                    alert("Username not valid. Please start with a letter and use only alphanumeric characters.");
+                }
+                else if (username.length < 6) {
+                    alert("Username must have at least 6 characters.");
+                }
+                else if (password.length < 5) {
+                    alert("Password must have at least 5 characters.");
+                }
+                else if (password != passwordRepeat) {
                     alert("Passwords do not match");
                 }
                 else {

@@ -45,5 +45,15 @@ function validateUser(Slim $app)
 {
     return function (Route $route) use ($app) {
         extract($app->request()->getBody());
+
+        $user = R::findOne('user', 'username = ?', array($username));
+        if(!empty($user)){
+            $app->halt(400, "User already exists");
+        }
+        if (!preg_match('/^[A-Za-z][A-Za-z0-9]{5,31}$/', $username) ||
+            (strlen($password) < 5)
+        ) {
+            $app->halt(400);
+        }
     };
 }

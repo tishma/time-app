@@ -1,6 +1,6 @@
 <?php
 
-$app->post('/register', function () use ($app) {
+$app->post('/register', validateUser($app), function () use ($app) {
     try {
         $input = $app->request()->getBody();
 

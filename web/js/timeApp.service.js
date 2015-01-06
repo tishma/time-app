@@ -13,7 +13,7 @@ timeApp.service = (function () {
                 })
                 .fail(function (data) {
                     failCallback({
-                        message: "Invalid login data",
+                        message: data.responseText || "Invalid login data",
                         status: data.status
                     });
                 })
@@ -31,7 +31,7 @@ timeApp.service = (function () {
                 })
                 .fail(function (data) {
                     failCallback({
-                        message: "Invalid login data",
+                        message: data.responseText || "Invalid login data",
                         status: data.status
                     });
                 })
