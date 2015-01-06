@@ -1,0 +1,2 @@
+<?php
+require 'test.php';
