@@ -12,3 +12,5 @@ $appRoot = dirname(__DIR__);
 require "env/{$config['env']}.php";
 
 R::close();
+
+echo "Application successfully setup for {$config['env']} environment.", PHP_EOL;
