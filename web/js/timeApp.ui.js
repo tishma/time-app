@@ -85,14 +85,8 @@ timeApp.ui = (function () {
                     .data("timezone", item)
                 ;
             });
-            $("button[name=edit]", "#content").off("click").on("click", function () {
-                timeApp.ui.showEditTimezoneForm($(this).parent());
-            });
-            $("button[name=delete]", "#content").off("click").on("click", function () {
-                if (confirm("Are you sure?")) {
-                    timeApp.deleteTimezone($(this).data('id'));
-                }
-            });
+
+            timeApp.ui.rebindListEvents();
 
             var $search = $(".search", "#content");
             $search.off("keyup").on("keyup", function () {
@@ -128,6 +122,7 @@ timeApp.ui = (function () {
             });
             $("button[name=cancel]", $itemContainer).off("click").on("click", function () {
                 $itemContainer.html(itemHtml);
+                timeApp.ui.rebindListEvents();
             });
             timeApp.ui.initAutocomplete();
         },
@@ -176,6 +171,17 @@ timeApp.ui = (function () {
                     .append("<a>" + formatTimezoneLabel(item) + "</a>")
                     .appendTo(ul);
             };
+        },
+        rebindListEvents: function() {
+
+            $("button[name=edit]", "#content").off("click").on("click", function () {
+                timeApp.ui.showEditTimezoneForm($(this).parent());
+            });
+            $("button[name=delete]", "#content").off("click").on("click", function () {
+                if (confirm("Are you sure?")) {
+                    timeApp.deleteTimezone($(this).data('id'));
+                }
+            });
         }
     };
 
