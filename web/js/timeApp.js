@@ -28,7 +28,7 @@ var timeApp = (function () {
         showTimezones: function () {
             if (!loggedUser) {
                 alert("Not logged in");
-                timeApp.navigate("login")
+                timeApp.navigate("login");
                 return;
             }
             timeApp.service.getTimezones(loggedUser, timeApp.ui.showTimezones, this.showAjaxError);

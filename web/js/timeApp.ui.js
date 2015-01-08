@@ -94,9 +94,9 @@ timeApp.ui = (function () {
                 }
             });
 
-            var $search = $(".search", "#content")
+            var $search = $(".search", "#content");
             $search.off("keyup").on("keyup", function () {
-                $(".timezoneItem", "#content").each(function (i) {
+                $(".timezoneItem", "#content").each(function () {
                     var timezone = $(this).data("timezone");
                     var search = new RegExp($search.val(), "i");
 
