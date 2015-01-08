@@ -43,7 +43,7 @@ roger:roger123
 
 3. Configure the app (see Configuration section)
 
-4. Run setup script (could be moved as an install task): 
+4. Run setup script (could be moved as an install task/include the confirmation that it deletes any existing data in the db): 
 ``` cd install; php setup.php ```
 
 5. That's it! You can navigate to your web app.
