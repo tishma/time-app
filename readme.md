@@ -45,5 +45,5 @@ cd install;
 php setup.php
 ```
 
-5. That's it!
+5. That's it! You can navigate to index.html of the web app.
 
