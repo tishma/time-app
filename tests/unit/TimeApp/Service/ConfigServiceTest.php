@@ -6,7 +6,7 @@
  * Time: 1:22 AM
  */
 
-require '../../../../src/TimeApp/Service/ConfigService.php';
+require __DIR__ . '/../../../../src/TimeApp/Service/ConfigService.php';
 
 use TimeApp\Service\ConfigService;
 

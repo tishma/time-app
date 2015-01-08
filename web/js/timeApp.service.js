@@ -40,7 +40,7 @@ timeApp.service = (function () {
         getTimezones: function (user, successCallback, failCallback) {
             $.ajax("/api/users/" + user.id + "/timezones", {
                 type: "GET",
-                headers: {"X-API-Key": user.apiKey},
+                headers: {"X-Api-Key": user.apiKey},
                 dataType: "json"
             })
                 .done(function (data) {
@@ -57,7 +57,7 @@ timeApp.service = (function () {
         createTimezone: function(user, timezone, successCallback, failCallback) {
             $.ajax("/api/users/" + user.id + "/timezones", {
                 type: "POST",
-                headers: {"X-API-Key": user.apiKey},
+                headers: {"X-Api-Key": user.apiKey},
                 contentType: "application/json",
                 data: JSON.stringify(timezone)
             })
@@ -75,7 +75,7 @@ timeApp.service = (function () {
         updateTimezone: function(user, timezone, successCallback, failCallback) {
             $.ajax("/api/users/" + user.id + "/timezones/" + timezone.id, {
                 type: "PUT",
-                headers: {"X-API-Key": user.apiKey},
+                headers: {"X-Api-Key": user.apiKey},
                 contentType: "application/json",
                 data: JSON.stringify(timezone),
                 dataType: "json"
@@ -94,7 +94,7 @@ timeApp.service = (function () {
         deleteTimezone: function(user, timezoneId, successCallback, failCallback) {
             $.ajax("/api/users/" + user.id + "/timezones/" + timezoneId, {
                 type: "DELETE",
-                headers: {"X-API-Key": user.apiKey}
+                headers: {"X-Api-Key": user.apiKey}
             })
                 .done(function () {
                     successCallback();

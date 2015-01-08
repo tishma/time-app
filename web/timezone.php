@@ -1,5 +1,7 @@
 <?php
 
+use TimeApp\ResourceNotFoundException;
+
 $app->get('', authenticate($app), function ($userId) use ($app) {
     try {
         $timezones = R::find('timezone', 'user_id = ?', array($userId));

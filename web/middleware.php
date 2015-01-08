@@ -7,7 +7,7 @@ function authenticate(Slim $app)
 {
     return function (Route $route) use ($app) {
         $userId = $route->getParam('userId');
-        $key = $app->request()->headers->get('X-API-Key');
+        $key = $app->request()->headers->get('X-Api-Key');
         $user = R::findOne('user', 'id = ?', array($userId));
         if (!$user) {
             $app->halt(401);

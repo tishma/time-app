@@ -1,8 +1,8 @@
 <?php
 // load required files
-require '../vendor/autoload.php';
-require '../src/autoload.php';
-require '../vendor/slim/slim/Slim/Slim.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../src/autoload.php';
+require_once __DIR__ . '/../vendor/slim/slim/Slim/Slim.php';
 
 use Slim\Route;
 use Slim\Slim;
@@ -16,9 +16,11 @@ $config = $configService->getConfig();
 
 
 // set up database connection
-$db = $config['database'];
-R::setup("mysql:host={$db['host']};dbname={$db['database']};port={$db['port']}", $db['user'], $db['password']);
-R::useExportCase('camel');
+if(!R::$currentDB){
+    $db = $config['database'];
+    R::setup("mysql:host={$db['host']};dbname={$db['database']};port={$db['port']}", $db['user'], $db['password']);
+    R::useExportCase('camel');
+}
 
 if($config['env'] == 'dev') {
     R::freeze(false);
@@ -37,13 +39,9 @@ Route::setDefaultConditions(array(
     'userId' => '[0-9]{1,}',
 ));
 
-class ResourceNotFoundException extends Exception
-{
-}
-
 // route middleware for simple API authentication
 
-require 'middleware.php';
+require_once 'middleware.php';
 
 
 $app->group('/api', function () use ($app) {
