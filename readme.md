@@ -4,7 +4,7 @@ Demo web app that allows users to register and manage list of timezones and view
  
  
 ## Requirements
-* Apache web server
+* Apache web server with mod_rewrite
 * MySQL Server
 * PHP 5.5
  
