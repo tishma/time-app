@@ -2,6 +2,7 @@
 
 Demo web app that allows users to register and manage list of timezones and view time in those.
  
+ 
 ## Requirements
 * Apache web server
 * MySQL Server
@@ -29,6 +30,7 @@ novak:novak123
 
 roger:roger123
  
+ 
 ## Installation
 
 1. Get the application source (from this repo)
@@ -38,6 +40,8 @@ roger:roger123
 2. Install composer if necessary (not covered)
 
 3. Run composer install (not covered)
+
+3. Configure the app (see Configuration section)
 
 4. Run setup script (could be moved as an install task): 
 ``` cd install; php setup.php ```
