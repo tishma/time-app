@@ -40,7 +40,7 @@ roger:roger123
 3. Run composer install (not covered)
 
 4. Run setup script (could be moved as an install task): 
-```
+```sh
 cd install; 
 php setup.php
 ```
